@@ -7,6 +7,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/lista-recetas.js"></script>
     <script src="scripts/services/servicios-recetas.js"></script>
+    <script src="scripts/directives/formulario-alta.js"></script>
 </head>
 <!--bootstraping of the app-->
 <body ng-app="cookbook">
@@ -16,10 +17,11 @@
 </header>
     <!-- Controlador 'ListaRecetas' -->
 <section ng-controller="ListaRecetas">
+    <formulario-alta al-hacer-click="guardarReceta(texto)"></formulario-alta>
            <!-- Formulario de alta de recetas -->
-           <input type="text" ng-model="nombreReceta">
-           <button ng-click="guardarReceta()">Guardar Receta</button>
-           <!-- Colección de recetas -->
+    <!-- <input type="text" ng-model="nombreReceta">
+    <button ng-click="guardarReceta()">Guardar Receta</button>-->
+    <!-- Colección de recetas -->
     <ul>
         <li ng-repeat="receta in recetas">{{receta.nombre}}</li>
     </ul>

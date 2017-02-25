@@ -6,11 +6,11 @@ angular.module("cookbook").service("ServicioRecetas", function($http){
 
     //obtenemos la collecion de recetas.
     this.obtenerRecetas = function(){
-        return $http.get("http://127.0.0.1:8000/api/recetas");
+        return $http.get("http://localhost:8000/api/recetas");
     };
 
     //guardamos la receta
     this.guardarReceta = function(receta){
-        return $http.post("http://127.0.0.1:8000/api/recetas", receta);
+        return $http.post("http://localhost:8000/api/recetas", receta);
     }
 });
