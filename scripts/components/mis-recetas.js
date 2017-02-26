@@ -2,6 +2,7 @@
  * Created by balate on 25/2/17.
  */
 angular.module("cookbook").component("misRecetas", {
+
     //establecemos la vista del componente
     templateUrl:"views/mis-recetas.html",
 
@@ -10,13 +11,16 @@ angular.module("cookbook").component("misRecetas", {
 
         var self = this;
 
-        // Como 'obtenerRecetas()' retorna una promesa, tengo que
-        // pasar un manejador a su funcion 'then()'.
-        ServicioRecetas.obtenerRecetas().then(function(respuesta) {
+        //podemos engancharnos al hook '$onInit', que se dispara cuando el componente se inicia o se instancia.
+        self.$onInit = function(){
 
-            // En la propiedad 'data' de la respuesta HTTP tenemos el cuerpo de la misma.
-            self.recetas = respuesta.data;
+            // Como 'obtenerRecetas()' retorna una promesa, tengo que
+            // pasar un manejador a su funcion 'then()'.
+            ServicioRecetas.obtenerRecetas().then(function(respuesta) {
 
-        });
+                // En la propiedad 'data' de la respuesta HTTP tenemos el cuerpo de la misma.
+                self.recetas = respuesta.data;
+            });
+        };
     }
-})
+});

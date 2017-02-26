@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- con 'base' indicamos la ruta base a partir dela cual se construyen las demas rutas del Single Page Application-->
+    <base href="/">
     <meta charset="UTF-8">
     <title>Cook Book</title>
+    <!--angularjs-->
     <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/@angular/router/angular1/angular_1_router.js"></script>
+    <!--documento de configuración del módulo-->
     <script src="scripts/app.js"></script>
+    <!--components-->
     <script src="scripts/controllers/lista-recetas.js"></script>
     <script src="scripts/services/servicios-recetas.js"></script>
     <script src="scripts/directives/formulario-alta.js"></script>
+    <script src="scripts/components/nueva-receta.js"></script>
     <script src="scripts/components/mis-recetas.js"></script>
+    <script src="scripts/components/raiz.js"></script>
+
 </head>
 <!--bootstraping of the app-->
 <body ng-app="cookbook">
-<!-- Cabecera de la aplicación -->
-<header>
-    <h1>Mi Libro de Recetas</h1>
-</header>
-    <!-- Controlador 'ListaRecetas' -->
-<section ng-controller="ListaRecetas">
-    <formulario-alta al-hacer-click="guardarReceta(texto)"></formulario-alta>
-    <!-- Colección de recetas -->
-    <mis-recetas></mis-recetas>
-</section>
-
+    <!--component raiz-->
+    <raiz></raiz>
 </body>
 </html>

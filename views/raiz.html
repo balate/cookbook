@@ -1,0 +1,19 @@
+<!-- Cabecera de la aplicación -->
+<header>
+    <h1>Mi Libro de Recetas</h1>
+</header>
+    <!-- barra de navegación-->
+    <nav>
+        <ul>
+            <li>
+                <!--con ng--link establecemos el nombre de la ruta a navegar-->
+                <a ng-link="['MisRecetas']">Mis Recetas</a>
+            </li>
+            <li>
+                <!--con ng--link establecemos el nombre de la ruta a navegar-->
+                <a ng-link="['NuevaReceta']">Nueva Receta</a>
+            </li>
+        </ul>
+    </nav>
+<!-- zona dinamica -->
+<ng-outlet></ng-outlet>
